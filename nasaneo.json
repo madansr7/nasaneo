@@ -347,7 +347,10 @@
                         "$ref": "#/components/schemas/estimated_diameter"
                     },
                     "close_approach_data": {
-                        "$ref": "#/components/schemas/CloseApproachData"
+                        "type": "array",
+                        "items":{
+                            "$ref": "#/components/schemas/CloseApproachData"    
+                        }
                     },
                     "orbital_data": {
                         "$ref": "#/components/schemas/orbital_data"
@@ -355,7 +358,7 @@
                 }
             },
             "closeapproachdata": {
-                "type": "array",
+                "type": "object",
                 "properties": {
                     "close_approach_date": {
                         "type": "string",
