@@ -324,7 +324,7 @@
                 "type": "object",
                 "properties": {
                     "is_potentially_hazardous_asteroid": {
-                        "type": "boolean",
+                        "type": "boolean"
                     },
                     "neo_reference_id": {
                         "type": "string",
@@ -363,7 +363,7 @@
                         "description": "approach date"
                     },
                     "epoch_date_close_approach": {
-                        "type": "float",
+                        "type": "integer",
                         "format": "int64"
                     },
                     "relative_velocity": {
@@ -383,14 +383,16 @@
                 "type": "object",
                 "properties": {
                     "kilometers_per_second": {
-                        "type": "integer",
-                        "format": "int64"
+                        "type": "number",
+                        "format": "float"
                     },
                     "kilometers_per_hour": {
-                        "type": "string"
+                        "type": "number",
+                        "format": "float"
                     },
                     "miles_per_hour": {
-                        "type": "string"
+                        "type": "number",
+                        "format": "float"
                     }
                 },
                 "description": "relative velocity object"
@@ -398,32 +400,21 @@
             "miss_distance": {
                 "type": "object",
                 "properties": {
-                    "id": {
-                        "type": "integer",
-                        "format": "int64"
+                    "astronomical": {
+                        "type": "number",
+                        "format": "float"
                     },
-                    "username": {
-                        "type": "string"
+                    "lunar": {
+                        "type": "number",
+                        "format": "float"
                     },
-                    "firstName": {
-                        "type": "string"
+                    "kilometers": {
+                        "type": "number",
+                        "format": "float"
                     },
-                    "lastName": {
-                        "type": "string"
-                    },
-                    "email": {
-                        "type": "string"
-                    },
-                    "password": {
-                        "type": "string"
-                    },
-                    "phone": {
-                        "type": "string"
-                    },
-                    "userStatus": {
-                        "type": "integer",
-                        "format": "int32",
-                        "description": "User Status"
+                    "miles": {
+                        "type": "number",
+                        "format": "float"
                     }
                 },
                 "description": "miss distance object"
