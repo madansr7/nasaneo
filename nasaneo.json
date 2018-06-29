@@ -93,14 +93,9 @@
                             "application/json": {
                                 "schema": {
                                     "title": "Collection of near earth objects",
-                                    "type": "object",
-                                    "properties": {
-                                        "value": {
-                                            "type": "array",
-                                            "items": {
-                                                "$ref": "#/components/schemas/nearearthobjectlist"
-                                            }
-                                        }
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/nearearthobjectlist"
                                     }
                                 }
                             }
@@ -305,20 +300,35 @@
     "components": {
         "schemas": {
             "nearearthobjectlist": {
-                "type": "object",
-                "properties": {
-                    "links": {
-                        "type": "boolean"
+                "allOf": [
+                    {
+                        "$ref": "#/components/schemas/nearearthobject"
                     },
-                    "nearearthobject": {
-                        "$ref":"#/components/schemas/nearearthobject"
-                    },
-                    "element_count": {
-                        "type": "integer",
-                        "format":"Int64",
-                        "description": "name of the Asteroid"
+                    {
+                        "type": "object",
+                        "properties": {
+                            "links": {
+                                "type": "object",
+                                "properties": {
+                                    "next": {
+                                        "type": "string"
+                                    },
+                                    "prev": {
+                                        "type": "string"
+                                    },
+                                    "self": {
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "element_count": {
+                                "type": "integer",
+                                "format": "Int64",
+                                "description": "name of the Asteroid"
+                            }
+                        }
                     }
-                }
+                ]
             },
             "nearearthobject": {
                 "type": "object",
@@ -348,8 +358,8 @@
                     },
                     "close_approach_data": {
                         "type": "array",
-                        "items":{
-                            "$ref": "#/components/schemas/CloseApproachData"    
+                        "items": {
+                            "$ref": "#/components/schemas/CloseApproachData"
                         }
                     },
                     "orbital_data": {
