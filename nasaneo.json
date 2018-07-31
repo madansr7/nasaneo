@@ -269,7 +269,7 @@
                                 "schema": {
                                     "type": "array",
                                     "items": {
-                                        "$ref": "#/components/schemas/NearEarthObject"
+                                        "$ref": "#/components/schemas/nearearthobject"
                                     }
                                 }
                             }
@@ -359,7 +359,7 @@
                     "close_approach_data": {
                         "type": "array",
                         "items": {
-                            "$ref": "#/components/schemas/CloseApproachData"
+                            "$ref": "#/components/schemas/closeapproachdata"
                         }
                     },
                     "orbital_data": {
